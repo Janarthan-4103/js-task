@@ -85,13 +85,26 @@
     "english": "90",
     "chemistry": "64",
     "physics": "89"
-  
+     
 }
-}
+},
+{
+      "name": "Julia",
+      "marks": {
+        "math": "82",
+        "english": "75",
+        "chemistry": "73",
+        "physics": "84"
+      }
+    }
 ]
   for(i=0; i<=result.length; i++)
   {
-    document.write(result[i].name,"<br>"+" "+result[i].value);      
+    document.write(result[i].name,"<br>")      
+  
+  for(var key in result[i].marks)
+    document.write(key +":"+ result[i].marks[key],"<br>")
+    // document.write(result[i].marks[key],"<br>")
   }
 </script>
 </body>
