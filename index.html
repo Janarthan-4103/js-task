@@ -114,7 +114,7 @@
 
 <p>Table Here</p>
 <script>
-    var result = [
+    var tr = [
 {
   "name": "John",
   "marks": {
@@ -162,6 +162,9 @@
       }
     }
 ]
+const data=JSON.parse(myjson);
+x=data.result.length;
+{
 var table = "<table border=1>";
       table += `<tr>
                   <th>Name</th>
@@ -175,22 +178,21 @@ var table = "<table border=1>";
                   <th>Chemistry</th>
                   <th>Physics</th>
                 </tr>`;
-    var result="";     
-    for(var i=0; i<=result.length; i++)
+    var tr="";     
+    for(let i=0; i<result.length; i++)
     {
-
-    
-    document.body.innerHTML+=table
-    document.write(result[i].name,"<br>")    
-    for(var key in result[i].marks){
-    document.write(result[i].marks[key],"<br>");
-    }
-    
+      tr += "<tr>";
+      tr += `<td>${result[i].name}</td>`;
+      for (var key in result[i].marks) {
+      tr += `<td>${result[i].marks[key]}</td>`;
+  }
+  tr += "</tr>"
 }
+  table += tr + "</table>";
+  document.write(table);
    
     
-       
-         
+}
 </script>
 </body>
 </html>
