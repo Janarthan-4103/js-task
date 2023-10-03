@@ -108,13 +108,12 @@
     
   }
 </script>
-</body>
-</html>
 
 
-<p>Table Here</p>
+
+<!-- <p>Table Here</p>
 <script>
-    var result = [
+    var obj= [
 {
   "name": "John",
   "marks": {
@@ -162,7 +161,7 @@
       }
     }
 ] 
-{
+
 var table = "<table border=1>";
       table += `<tr>
                   <th>Name</th>
@@ -176,21 +175,112 @@ var table = "<table border=1>";
                   <th>Chemistry</th>
                   <th>Physics</th>
                 </tr>`;
-//     var result="";     
-//     for(let i=0; i<result.length; i++)
-//     {
-//       tr += "<tr>";
-//       tr += `<td>${data.result[i].name}</td>`;
-//       for (var key in data.result[i].marks) {
-//       tr += `<td>${data.result[i].marks[key]}</td>`;
-//   }
-//   tr += "</tr>"
-// }
-//   table += tr + "</table>";
-  document.write(table);
-   
-
+    var a="";     
+    for(i=0; i<obj.length; i++)
+    {
+      a += "<tr>";
+      a += "<td>"+obj[i].name+"</td>";
+      for (var key in obj[i].marks) {
+      a += "<td>"+obj[i].marks[key]+"</td>";
+  }
+      a += "</tr>"
 }
+  // table += tr + "</table>";
+  document.write(table);
+  
+     -->
+
 </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+  <p>Table Format</p>  
+  <table border="1px" >
+    <thead>
+        <tr> 
+            <th rowspan="2">Name</th>
+            <th colspan="4">Marks</th>
+        </tr>
+        <tr>
+            <th>Math</th>
+            <th>English</th>
+            <th>Chemistry</th>
+            <th>Physics</th>
+        </tr>
+    </thead>
+    <tbody id="table"></tbody>
+  </table>
+    <script>
+        var obj= [
+       {
+           "name": "joe",
+          "marks": {
+            "math": "78",
+            "english": "90",
+            "chemistry": "64",
+            "physics": "89"
+          }
+        },
+        {
+          "name": "Mike",
+          "marks": {
+            "math": "67",
+            "english": "86",
+            "chemistry": "59",
+            "physics": "70"
+          }
+        },
+        {
+          "name": "Julia",
+          "marks": {
+            "math": "82",
+            "english": "75",
+            "chemistry": "73",
+            "physics": "84"
+          }
+        },
+        {
+          "name": "Tom",
+          "marks": {
+            "math": "76",
+            "english": "64",
+            "chemistry": "59",
+            "physics": "72"
+          }
+        },
+        {
+          "name": "Barbara",
+          "marks": {
+            "math": "90",
+            "english": "85",
+            "chemistry": "88",
+            "physics": "92"
+          }
+        }
+      ]
+        var tbody=document.getElementById('table')
+         var a="";
+        for(let i=0;i<obj.length;i++)
+        {
+          a+="<tr>"
+          a+="<td>"+obj[i].name+"</td>";
+          for (var key in obj[i].marks) {
+          a += "<td>"+obj[i].marks[key]+"</td>";
+        }
+          a+="</tr>"
+        }
+        tbody.innerHTML=a;
+    </script>
 </body>
 </html>
